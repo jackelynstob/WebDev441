@@ -1,0 +1,63 @@
+<html>
+
+  <head>
+      <title>INCLINED by: Jack Stob</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://use.typekit.net/kok7wtj.css">
+
+  </head>
+
+  <body>
+
+<div class="hero">
+<div class="button">
+
+<h2><center>Do you want to access "INCLINED"?</center></h2>
+<div id="text"></div>
+<div app>
+  <div>
+    <form id="input" onsubmit="start()">
+
+
+        <center><button type="submit" class="start" onclick="display()">YES</button></center>
+        </form>
+  </div>
+</div>
+
+<script>
+var a = document.getElementById("input");
+var b;
+function display() {
+	a.style.display = "none";
+}
+start = function start() {
+  var reply = confirm("Are you ready?");
+    if (reply === false) {
+      alert("Quit Story?");
+      alert("You're going to fail out of school");
+ 	}
+  else {
+    game();
+    console.log("start");
+  }
+ };
+
+function game() {
+  document.getElementById("text").innerHTML = "Your homework assignment is to create your own adventure story.";
+  var firstQuestion = prompt("Your homework assignment is to create your own adventure story. Do you accept? \n\nyes or no");
+if (firstQuestion === "yes"){
+  alert("Wonderful. Let's pick our style of story.");
+}
+  else{
+    alert("You're going to fail out of school");
+  }
+  //alert("Press enter to continue.");
+  console.log("story");
+}
+
+
+</script>
+</div>
+</div>
+  </body>
+</html>
