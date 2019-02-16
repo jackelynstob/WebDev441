@@ -2,62 +2,156 @@
 
   <head>
       <title>INCLINED by: Jack Stob</title>
-      <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="https://use.typekit.net/kok7wtj.css">
+
 
   </head>
 
-  <body>
-
-<div class="hero">
-<div class="button">
-
-<h2><center>Do you want to access "INCLINED"?</center></h2>
-<div id="text"></div>
-<div app>
-  <div>
-    <form id="input" onsubmit="start()">
-
-
-        <center><button type="submit" class="start" onclick="display()">YES</button></center>
-        </form>
-  </div>
-</div>
 
 <script>
-var a = document.getElementById("input");
-var b;
-function display() {
-	a.style.display = "none";
-}
-start = function start() {
-  var reply = confirm("Are you ready?");
-    if (reply === false) {
-      alert("Quit Story?");
-      alert("You're going to fail out of school");
- 	}
-  else {
-    game();
-    console.log("start");
+
+  function choice1()
+   {
+    var myChoice = document.getElementById("choice").value;
+    var myQuestion = document.getElementById("question");
+    if(myChoice === "yes")
+    {
+      document.getElementById("choice").style.display="none";
+      document.getElementById("btnSubmit").style.display="none";
+
+      document.getElementById("choice2").style.display="block";
+      document.getElementById("btnSubmit2").style.display="block";
+
+      myQuestion.innerHTML = "Wonderful. What kind of story would you like to write? Fantasy or Inception?";
+    document.getElementById("inception").src = "media/scale.png";
   }
- };
+    else if(myChoice === "no")
+    {
+        document.getElementById("inception").src = "media/theend.png";
+      myQuestion.innerHTML = "You're going to fail out of college. Is that what you want? Refresh page if it isn't.";
 
-function game() {
-  document.getElementById("text").innerHTML = "Your homework assignment is to create your own adventure story.";
-  var firstQuestion = prompt("Your homework assignment is to create your own adventure story. Do you accept? \n\nyes or no");
-if (firstQuestion === "yes"){
-  alert("Wonderful. Let's pick our style of story.");
-}
-  else{
-    alert("You're going to fail out of school");
+    }
+    else{
+      myQuestion.innerHTML = "Invalid answer... don't forget to capitalize the first letter";
+    }
+
   }
-  //alert("Press enter to continue.");
-  console.log("story");
+
+
+  function story() {
+
+    var storyType = document.getElementById("choice2").value;
+    var myQuestion = document.getElementById("question");
+
+    if (storyType === "Inception")
+      {
+      document.getElementById("choice2").style.display="none";
+      document.getElementById("btnSubmit2").style.display="none";
+      document.getElementById("choice4").style.display="block";
+      document.getElementById("btnSubmit4").style.display="block";
+      document.getElementById("inception").src = "media/inception.png";
+      myQuestion.innerHTML = "Since you chose Inception, should we write a 'choose your own adventure story' or the movie?";
+    }
+      else if(storyType === "Fantasy")
+      {
+        document.getElementById("choice2").style.display="none";
+        document.getElementById("btnSubmit2").style.display="none";
+        document.getElementById("choice3").style.display="block";
+        document.getElementById("btnSubmit3").style.display="block";
+        document.getElementById("inception").src = "media/fantasy.png";
+        myQuestion.innerHTML = "Fantasy is the best. What kind of fantasy would you like to write? Twilight or Harry Potter?";
+      }
+      else {
+        myQuestion.innerHTML = "Invalid answer... please choose Inception or Fantasy";
+      }
+    }
+
+  function fantasy()
+  {
+    var whichFantasy = document.getElementById("choice3").value;
+    var myQuestion = document.getElementById("question");
+
+    if(whichFantasy === "Harry Potter")
+    {
+    document.getElementById("inception").src = "media/harrypotter.png";
+    document.getElementById("choice3").style.display="none";
+    document.getElementById("btnSubmit3").style.display="none";
+
+      myQuestion.innerHTML = "J.K. Rowling wouldn't be impressed with you stealing her book idea. The End.";
+    }
+    else if(whichFantasy === "Twilight")
+    {
+  document.getElementById("inception").src = "media/twilight.png";
+    document.getElementById("choice3").style.display="none";
+    document.getElementById("btnSubmit3").style.display="none";
+      myQuestion.innerHTML = "Stephanie Meyers wouldn't be impressed wth you stealing her book idea. The End.";
+    }
+    else {
+      document.getElementById("choice3").style.display="none";
+      document.getElementById("btnSubmit3").style.display="none";
+      myQueston.innerHTML = "Good for you for picking your own storyline. Leave here and go write that!!!!";
+    }
+  }
+
+function inception()
+{
+
+var inception = document.getElementById("choice4").value;
+var myQuestion = document.getElementById("question");
+
+if(inception === "New story")
+{
+    document.getElementById("inception").src = "media/theend.png";
+  myQuestion.innerHTML = "You're living in the Inception. You're writing a choose your own adventure story while doing a choose your own adventure story. Leave before your brain breaks";
+  document.getElementById("choice4").style.display="none";
+  document.getElementById("btnSubmit4").style.display="none";
+}
+  else if(inception === "The movie")
+  {
+      document.getElementById("inception").src = "media/movie.png";
+  myQuestion.innerHTML = "You can't copy a movie!!! The End.";
+  document.getElementById("choice4").style.display="none";
+  document.getElementById("btnSubmit4").style.display="none";
+}
+  else
+  {
+    document.getElementById("inception").src = "media/theend.png";
+    myQuestion.innerHTML = "So you want to write you own Inception story? Leave here and go do that!"
+    document.getElementById("choice4").style.display="none";
+    document.getElementById("btnSubmit4").style.display="none";
+  }
 }
 
+ </script>
+<body>
 
-</script>
-</div>
-</div>
+
+ <center>
+   <h1> INCLINED</h1>
+ <h3><i>Which path are you inclined to take?</i></h3>
+ <img src="media/bookcover.png" id="inception">
+
+ <div id="question">
+
+    Welcome to "Inclined". A choose your own adventure story. You will choose one of two paths.
+  </br/>Path 1: you, the user, will act as an author and make decisions to either<br/>
+   write your own 'choose your own adventure story', or <br/>
+   Path 2: a fantasy novel. Which are you inclined to do?
+  <br/>
+  <b> Do you want to play?</b>
+
+ </div>
+
+        <input type="text" size="30" id="choice" value="yes or no">
+         <button id="btnSubmit" onclick="choice1();">Click to continue</button>
+
+         <input type="text" size="30" id="choice2" value="Fantasy or Inception?" style="display:none">
+         <button id="btnSubmit2" onclick="story();"  style="display:none">Continue</button>
+
+        <input type="text" size="30" id="choice3" value="Harry Potter or Twilight?"  style="display:none">
+        <button id="btnSubmit3" onclick="fantasy();" style="display:none">Click to continue</button>
+
+        <input type="text" size="30" id="choice4" value="New story or The movie?" style="display:none">
+        <button id="btnSubmit4" onclick="inception();" style="display:none">Continue</button>
+</center>
   </body>
 </html>

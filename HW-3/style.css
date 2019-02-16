@@ -1,14 +1,15 @@
+
 body {
-    padding: 0;
-    margin: 0;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    font-family: serif;
-    font-weight: 300;
-    background-image: url("media/bookcover.png");
-    overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: serif;
+  font-weight: 300;
+  overflow: hidden;
+  background-image: url("media/bookcover.png");
 }
 
 .hero {
@@ -67,3 +68,41 @@ body {
         margin-top: 40%;
     }
 }
+
+#text {
+  padding: 0;
+  margin: 0;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: serif;
+  font-weight: 300;
+  overflow: hidden;
+  background-image: url("media/bookcover.png");
+
+}
+
+ #story {
+  padding: 0;
+  margin: 0;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: serif;
+  font-weight: 300;
+  overflow: hidden;
+}
+
+#fantasy {
+  padding: 0;
+  margin: 0;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: serif;
+  font-weight: 300;
+  overflow: hidden;
+} 
