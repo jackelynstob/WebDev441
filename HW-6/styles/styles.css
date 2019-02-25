@@ -1,5 +1,10 @@
 body{
     background-color:black;
+    color: white;
+}
+
+.titlePage{
+  padding-top: 5%;
 }
 
 .divTable{
