@@ -9,7 +9,7 @@
     </link>
 </head>
 
-<body onload="printBlanks();playerInfo();">
+<body onload="printBlanks(); createRandomImageArray(); playerInfo(); ">
   <center> <h1><font color="orange">BATTLE OF THE ZODIACS</font></h1></center>
 
 <center>
@@ -52,6 +52,9 @@
                 <div class="divTableCell"><img src="" id="image24" width="100" height="100" onclick="flipImage(23);"></div>
             </div>
         </div>
+    </div>
+    <div id="button-div">
+      <button id="finish" onclick="end();">All Done?</button>
     </div>
 </center>
 </body>

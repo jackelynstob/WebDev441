@@ -3,12 +3,16 @@ var imageTags = ["image1", "image2", "image3", "image4", "image5", "image6", "im
 // create a variable with the blank image name
 var blankImagePath = "media/blank.png";
 
-
+var firstNumber = -1;
+var secondNumber = -1;
 //JSON declaration
-var player = {"firstName":"", "lastName":""};
 
 // create a empty array for the actual images
-var actualImages = new Array();
+var actualImages = [];
+
+var attempts = 0;
+
+var player = {"firstName":"", "lastName":"", "age":"", "attempts":""};
 
 function printBlanks()
 {
@@ -18,11 +22,8 @@ function printBlanks()
     for(var i = 0; i < imageTags.length; i++)
     {
     // iterate through the image tag ids and sets the source
-        document.getElementById(imageTags[i]).src= blankImagePath;
+        document.getElementById(imageTags[i]).src=blankImagePath;
     }
-
-
-
 }
 
 function createRandomImageArray()
@@ -59,6 +60,7 @@ function flipImage(number)
   {
     secondNumber = number;
     document.getElementById(imageTags[number]).src= actualImages[secondNumber];
+    setTimeout(imagesDisappear, 1000);
         // this should be a quick function that just changes
         // the image based on what number was pressed
   }
@@ -71,19 +73,22 @@ function flipImage(number)
   if(actualImages[secondNumber] != actualImages[firstNumber] && firstNumber >= 0 && secondNumber >= 0)
   {
     setTimeout(imagesDisappear, 1000);
+    attempts += 1;
+    return attempts;
   }
 
   else if(actualImages[secondNumber] == actualImages[firstNumber] && firstNumber >= 0 && secondNumber >= 0)
   {
     firstNumber = -1;
     secondNumber = -1;
+    attempts += 1;
+    return attempts;
   }
+
 }
 
 function imagesDisappear()
 {
-
-  console.log(firstNumber);
   document.getElementById(imageTags[firstNumber]).src =blankImagePath;
   document.getElementById(imageTags[secondNumber]).src = blankImagePath;
   firstNumber = -1;
@@ -94,7 +99,19 @@ function imagesDisappear()
 function addToPlayer()
 {
   var firstName = document.getElementById("txtFirstName").value;
+  var lastName = document.getElementById("txtLastName").value;
+  var age = document.getElementById("txtAge").value;
+
   player.firstName = firstName;
+  localStorage.setItem("playerInfo", JSON.stringify(player));
+  window.location = "index.html";
+
+
+  player.lastName = lastName;
+  localStorage.setItem("playerInfo", JSON.stringify(player));
+  window.location = "index.html";
+
+  player.age = age;
   localStorage.setItem("playerInfo", JSON.stringify(player));
   window.location = "index.html";
 }
@@ -103,6 +120,20 @@ function playerInfo()
 {
   var playerInformation = localStorage.getItem("playerInfo");
   player = JSON.parse(playerInformation);
-  console.log(player.firstname);
-  
+
+}
+
+function end()
+{
+  player.attempts = attempts;
+  localStorage.setItem("playerInfo", JSON.stringify(player));
+  window.location = "final.html";
+}
+
+function lastPage()
+{
+  var playerInformation = localStorage.getItem("playerInfo");
+    player = JSON.parse(playerInformation);
+    document.getElementById("score").innerHTML = "Ayoo, " + player.firstName + " " + player.lastName
+    + ". At" + "  " + player.age + " years old you finished the game in " + "  " + player.attempts + " " + "guesses."
 }
