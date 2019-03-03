@@ -3,15 +3,18 @@
     <title>View Master</title>
     <link rel="stylesheet" href="styles/style.css" text="text/css">
 </head>
-<body onload="initializeArray();">
+<body onload="initializeArray();showCover;">
+  <center>
   <div class="center">
+    <div id="imgs"><img src="media/cover.png" id="Cover"></div>
+    </div>
     <div id="Title"></div>
     <div id="imgs"><img src="" id="Album"></div>
     <div id="Artist"></div>
     <div id="Year"></div>
     <div id="Description"></div>
       <div class="buttonHolder">
-        <button id="submit" onclick="accessInformation();">A Top 5 Album Covers:</button>
+        <button id="submit" onclick="accessInformation();hideCover();">Top 5 Album Covers: </button>
       </div>
     </div>
     <script type="text/javascript" src="scripts/script.js"></script>

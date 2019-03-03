@@ -11,6 +11,13 @@ html, body {
     width: 30%;
     height: auto;
 }
+#Cover {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    height: auto;
+}
 #Title {
  text-align: center;
  font-family: sans-serif;
@@ -30,7 +37,7 @@ html, body {
  font-family: serif;
  font-size: 20px;
  color: gold;
- margin: 20px;
+ margin: 10px;
 }
 #Description {
  text-align: center;
@@ -42,14 +49,19 @@ html, body {
  padding-left: 30px;
 }
 button{
-  background:grey;
-  color:#fff;
-  border:none;
+  background-color:white;
+  color:black;
+  border: 2px solid gold;
   position:relative;
   height:60px;
   font-size:1.6em;
   padding:0 2em;
   outline:none;
+}
+button:hover{
+background-color: black;
+color: white;
+border: 2px solid white;
 }
 .buttonHolder{
     text-align: center;

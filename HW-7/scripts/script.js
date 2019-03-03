@@ -2,6 +2,13 @@ var albumsArray = new Array();
 
 var albumImage = ['media/led.png', 'media/big.png', 'media/patti.png', 'media/beatles.png', 'media/andy.png', 'media/led.png'];
 
+function showCover(){
+	document.getElementById('Cover').style.display = 'block';
+}
+function hideCover() {
+	document.getElementById('Cover').style.display = 'none';
+}
+
 class albumClass
 {
 	constructor (title, artist, year, description){
@@ -48,7 +55,6 @@ function initializeArray() {
 
 function accessInformation() {
 	var x = Math.floor((Math.random() * 6) +1 );
-
 	document.getElementById("Title").innerHTML = albumsArray[x].toStringTitle();
 	document.getElementById("Artist").innerHTML = albumsArray[x].toStringArtist();
 	document.getElementById("Year").innerHTML = albumsArray[x].toStringYear();
