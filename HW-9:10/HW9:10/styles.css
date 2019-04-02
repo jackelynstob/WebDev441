@@ -1,0 +1,83 @@
+
+body {
+
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	font-family: serif;
+	font-weight: 300;
+	background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("imgs/blackmirror.jpg");
+}
+
+h1 {
+	font-family: fantasy;
+	font-size: 40px;
+	position: relative;
+	left: 10%;
+}
+
+
+/*Some CSS qualities borrow from http://responsiveslides.com (RS) */
+.rslides {
+	font-family: monospace;
+	font-size: 20px;
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+	left: 10%;
+  }
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+ /*End RS*/
+blockquote{
+	font-size: 20px;
+	position: relative;
+	align: left;
+	width: 70%;
+}
+
+#btnSubmit{
+	position: relative;
+	width: auto;
+	font-family: monospace;
+}
+.bikeInformation {
+	font-family: monospace;
+	font-size: 15px;
+	padding: 2%;
+	background: rgba(255, 255, 255, 0.4);
+	color: black;
+	border-style: double;
+	position: relative;
+	left: 10%;
+	width: 80%;
+	text-align: left;
+}
+
+.border {
+	font-size: 20px;
+	background: rgba(255, 255, 255, 0.4);
+	padding: 2%;
+	color: black;
+	border-style: double;
+	position: relative;
+	left: 10%;
+	width: 80%;
+	text-align: left;
+}

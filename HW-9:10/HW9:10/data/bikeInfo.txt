@@ -1,0 +1,13 @@
+<bike>
+	<manufacturer>Orbea</manufacturer>
+	<model>Orca</model>
+	<year>2019</year>
+	<price>$4500</price>
+</bike>
+
+<show>
+	<name></name>
+	<season></season>
+	<number></number>
+	<summary></summary>
+</show>
